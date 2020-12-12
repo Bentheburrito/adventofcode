@@ -33,14 +33,4 @@ defmodule AOC.Day10 do
 	def possible_arrangements(1), do: 1
 	def possible_arrangements(num_adapters) when num_adapters <= 3, do: num_adapters - 1
 	def possible_arrangements(num_adapters), do: round(:math.pow(2, (num_adapters - 2))) - (num_adapters - 4)
-
-	# def arrangements(adapters) do
-	# 	Enum.chunk_while(adapters, [0], fn
-	# 		adapter, [] -> {:cont, [adapter]}
-	# 		adapter, acc ->	adapter - 1 == List.first(acc) && {:cont, [adapter | acc]} || {:cont, Enum.reverse([adapter | acc]), []}
-	# 	end, fn
-	# 		[] -> {:cont, []}
-  #   	acc -> {:cont, Enum.reverse(acc), []}
-	# 	end)
-	# end
 end
