@@ -1,10 +1,8 @@
 defmodule AOC.Y2021.Day2 do
-  def run(input) do
-    instructions = parse_input(input)
-    product = AOC.time(&star_1/1, [instructions])
-    IO.inspect("Star 1: #{product}")
-    product = AOC.time(&star_2/1, [instructions])
-    IO.inspect("Star 2 num inc: #{product}")
+  @behaviour AOC.Solution
+
+  def input_path() do
+    "./lib/2021/input/day2.txt"
   end
 
   def parse_input(input) do

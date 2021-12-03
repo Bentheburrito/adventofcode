@@ -1,10 +1,8 @@
 defmodule AOC.Y2021.Day1 do
-  def run(input) do
-    nums = parse_input(input)
-    num_inc = AOC.time(&star_1/1, [nums])
-    IO.inspect("Star 1 num inc: #{num_inc}")
-    num_inc = AOC.time(&star_2/1, [nums])
-    IO.inspect("Star 2 num inc: #{num_inc}")
+  @behaviour AOC.Solution
+
+  def input_path() do
+    "./lib/2021/input/day1.txt"
   end
 
   def parse_input(input) do

@@ -1,0 +1,19 @@
+defmodule AOC.Y2021.DayX do
+  @behaviour AOC.Solution
+
+  def input_path() do
+    "./lib/2021/input/dayX.txt"
+  end
+
+  def parse_input(input) do
+    input |> String.trim() |> String.split("\n")
+  end
+
+  def star_1(instructions) do
+    
+	end
+
+  def star_2(instructions) do
+		
+  end
+end

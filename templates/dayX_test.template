@@ -1,0 +1,23 @@
+defmodule AOCTest.Y2021.DayXTest do
+  use ExUnit.Case
+
+  alias AOC.Y2021.DayX
+
+  setup do
+    input = """
+    
+    """
+    |> DayX.parse_input()
+    %{input: input}
+  end
+
+  test "", %{input: input} do
+    assert DayX.star_1(input) == 
+  end
+
+  test "", %{input: input} do
+    assert DayX.star_2(input) == 
+  end
+
+  AOC.run(DayX)
+end

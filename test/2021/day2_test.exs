@@ -1,8 +1,7 @@
-defmodule AOCTest do
+defmodule AOCTest.Y2021.Day2Test do
   use ExUnit.Case
 
   alias AOC.Y2021.Day2
-  @input_path "./lib/2021/input/day2.txt"
 
   setup do
     input = """
@@ -25,5 +24,5 @@ defmodule AOCTest do
     assert Day2.star_2(input) == 900
   end
 
-  Day2.run(File.read!(@input_path))
+  AOC.run(Day2)
 end
