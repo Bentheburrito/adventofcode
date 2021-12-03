@@ -6,6 +6,7 @@ defmodule AOC do
     {first_time_us, first_solution_val} = :timer.tc(module, :star_1, [parsed_input])
     {second_time_us, second_solution_val} = :timer.tc(module, :star_2, [parsed_input])
     IO.puts("""
+    #{module} results:
     Input parse time: #{parse_time_us / 1000}ms
     Star 1 (#{first_time_us / 1000}ms): #{first_solution_val}
     Star 2 (#{second_time_us / 1000}ms): #{second_solution_val}

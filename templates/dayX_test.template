@@ -11,11 +11,11 @@ defmodule AOCTest.Y2021.DayXTest do
     %{input: input}
   end
 
-  test "", %{input: input} do
+  test "DayX part 1", %{input: input} do
     assert DayX.star_1(input) == 
   end
 
-  test "", %{input: input} do
+  test "DayX part 2", %{input: input} do
     assert DayX.star_2(input) == 
   end
 

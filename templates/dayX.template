@@ -6,7 +6,7 @@ defmodule AOC.Y2021.DayX do
   end
 
   def parse_input(input) do
-    input |> String.trim() |> String.split("\n")
+    input |> String.split("\n", trim: true)
   end
 
   def star_1(instructions) do
