@@ -68,7 +68,6 @@ defmodule AOC.Y2021.Day3 do
 
   defp find_rating_num([line | _rest] = report_lines, critera_fun) do
     0..(String.length(line))
-    |> IO.inspect()
     |> Enum.reduce_while(report_lines, fn
       _col_num, [num] ->
         {rating, _} = Integer.parse(num, 2)
