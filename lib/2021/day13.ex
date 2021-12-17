@@ -25,7 +25,6 @@ defmodule AOC.Y2021.Day13 do
         {String.to_atom(axis), String.to_integer(val)}
       end
 
-    IO.inspect folds
     {points, folds}
   end
 
@@ -48,7 +47,8 @@ defmodule AOC.Y2021.Day13 do
 
   def star_2({points, folds}) do
     fold_all(points, folds)
-    |> print()
+    # |> print()
+    :ok
   end
 
   defp fold_all(points, []), do: points
@@ -57,7 +57,6 @@ defmodule AOC.Y2021.Day13 do
   end
 
   defp print(points) do
-    IO.inspect points, limit: :infinity
     IO.puts("")
     for y <- 0..6, x <- 0..200 do
       IO.write(Map.get(points, {x, y}, "."))
