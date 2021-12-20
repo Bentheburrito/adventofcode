@@ -46,7 +46,6 @@ defmodule AOC.Y2021.Day15 do
     |> Enum.filter(fn %Graph.Edge{v1: {x1, y1}, v2: {x2, y2}} ->
       abs(x1 - x2) > 1 or abs(y1 - y2) > 1
     end)
-    |> IO.inspect()
 
     {graph, {row_length - 1, col_length - 1}}
   end
@@ -63,7 +62,6 @@ defmodule AOC.Y2021.Day15 do
 
   defp get_path_weight([v1, v2 | path], %Graph{} = graph, total_weight) do
     %Graph.Edge{weight: weight} = Graph.edge(graph, v1, v2)
-    IO.inspect("#{inspect v1} -> #{inspect v2}, #{weight}")
     get_path_weight([v2 | path], graph, total_weight + weight)
   end
 

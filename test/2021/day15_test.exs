@@ -28,5 +28,8 @@ defmodule AOCTest.Y2021.Day15Test do
     assert Day15.star_2(input) == 315
   end
 
-  AOC.run(Day15) # 3638 too high, 1345 too low
+  @tag skip: true
+  test "Day15" do
+    AOC.run(Day15)
+  end
 end
