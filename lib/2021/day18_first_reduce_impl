@@ -1,0 +1,40 @@
+
+# regular number
+defp reduce(regular_number, _cur_level) when is_integer(regular_number), do: {regular_number, 0, 0}
+
+# explode
+defp reduce([l_regular_number, r_regular_number], cur_level) when cur_level > 4 do
+  {0, l_regular_number, r_regular_number}
+end
+
+# left splitable
+defp reduce([left, right], _cur_level) when is_splitable(left) do
+  left = [div(left, 2), ceil(left / 2)]
+  {[left, right], 0, 0}
+end
+
+# right splitable
+defp reduce([left, right], _cur_level) when is_splitable(right) do
+  right = [div(right, 2), ceil(right / 2)]
+  {[left, right], 0, 0}
+end
+
+defp reduce([left, right], cur_level) do
+  with {left_pair, left_carry, right_add} <- reduce(left, cur_level + 1),
+        {right_pair, left_add, right_carry} <- reduce(right, cur_level + 1) do
+    left_pair = is_integer(left_pair) && left_pair + left_add || add_right(left_pair, left_add)
+    right_pair = is_integer(right_pair) && right_pair + right_add || add_left(right_pair, right_add)
+
+    {[left_pair, right_pair], left_carry, right_carry}
+  end
+end
+
+# entry
+def reduce(sfn) do
+  case reduce(sfn, _cur_level = 1) do
+    {^sfn, _, _} -> sfn
+    {reduced, _, _} ->
+      IO.inspect(reduced, label: "one iter", charlists: :as_lists)
+      reduce(reduced)
+  end
+end
